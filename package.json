@@ -45,7 +45,6 @@
   "lint-staged": {
     "*.ts": [
       "yarn lint",
-      "git add"
     ]
   },
   "eslintConfig": {
