@@ -11,6 +11,7 @@ interface IProps {
     border?: string;
     borderRadius?: string;
     hoverColor?: string;
+    disabled?: boolean;
 };
 
 const ButtonWrapper = styled.button<IProps>(props =>`
@@ -21,16 +22,21 @@ const ButtonWrapper = styled.button<IProps>(props =>`
     background-color: ${props.color || props.theme.primaryColor};
     border: ${props.border || 'none'};
     border-radius: ${props.borderRadius || '5px'};
-
+    
     &:hover {
         background-color: ${props.hoverColor || props.theme.secondaryColor};
     }
+
+    ${props.disabled && `
+        background-color: ${props.theme.gray};
+        cursor: unset;
+    `}
 `);
 
 const Button: React.FC<IProps> = (props) => {
-    const { text, children, onClick } = props;
+    const { text, children, onClick, disabled } = props;
     return (
-        <ButtonWrapper onClick={onClick}>
+        <ButtonWrapper disabled={disabled} onClick={onClick}>
             { text || children }
         </ButtonWrapper>
     );

@@ -6,6 +6,7 @@ import { setOpenModal } from '../../store/actionCreators';
 import Input from '../common/Input/Input';
 import Button from '../common/Button/Button';
 import { IMovie } from '../../interfaces/movie';
+import EditSchema from '../../formValidations/edit';
 
 interface IProps {
     initialValues: IMovie,
@@ -22,33 +23,42 @@ const EditForm = (props: IProps) => {
     return (
         <Formik
             initialValues={initialValues}
-            onSubmit={onSubmit}    
+            onSubmit={onSubmit}   
+            validationSchema={EditSchema} 
         >
         {(formikProps: FormikProps<FormikValues>) => {
             // TODO: i18n
             return (
                 <form>
                     <Styles.FieldContainer>
+                        <Styles.ErrorField>{formikProps.errors?.title}</Styles.ErrorField>
+                        <Styles.ErrorField>{formikProps.errors?.release_date}</Styles.ErrorField>
+                        <Styles.ErrorField>{formikProps.errors?.rating}</Styles.ErrorField>
+
                         <Input
                             onChange={formikProps.handleChange}
                             name="title"
                             value={formikProps.values.title}
                             label="Title"
+                            error={Boolean(formikProps.errors?.title)}
                         />
                         <Input
                             onChange={formikProps.handleChange}
                             name="release_date"
                             value={formikProps.values.release_date}
                             label="Release date"
+                            error={Boolean(formikProps.errors?.release_date)}
                         />
+
                         <Input
                             onChange={formikProps.handleChange}
                             name="vote_average"
                             value={formikProps.values.vote_average}
                             label="Rating"
+                            error={Boolean(formikProps.errors?.vote_average)}
                         />
                         <Styles.ButtonContainer>
-                            <Button text="Yes" onClick={formikProps.handleSubmit} />
+                            <Button disabled={!formikProps.isValid} text="Yes" onClick={formikProps.handleSubmit} />
                             <Button text="No" onClick={closeModalHandler} />
                         </Styles.ButtonContainer>
 
@@ -80,3 +90,10 @@ Styles.ButtonContainer = styled.div`
     justify-content: space-between;
     padding: 5% 0;
 `;
+
+Styles.ErrorField = styled.div(props =>`
+    color: ${props.theme.red};
+    font-size: 0.75em;
+    margin-top: 2%;
+    font-weight: bold;
+`);

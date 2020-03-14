@@ -11,6 +11,9 @@ const MuiProvider: React.FC = (props) => {
           primary: {
               main: mainTheme.primaryColor
             },
+          secondary: {
+            main: mainTheme.red
+          }
           }
         },
       )

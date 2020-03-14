@@ -17,16 +17,34 @@ interface IPayload {
     payload: {}
 };
 
+interface IFetchMoviesSuccessPayload {
+  page: number;
+  total_results: number;
+  total_pages: number;
+  results: Array<IMovie>;
+};
+
 
 const initialState = {
   error: '',
   movies: null,
 };
 
-const fetchMoviesSuccess = (state: IState, payload: IPayload) => (
+const getYearOutOfDateString = (payload: IFetchMoviesSuccessPayload) => {
+  return payload.results.map((movie: IMovie) => {
+  return {
+    ...movie,
+    release_date: movie.release_date.substr(0,4)
+  };
+})};
+
+const fetchMoviesSuccess = (state: IState, payload: IFetchMoviesSuccessPayload) => (
   {
     ...state,
-    movies: payload,
+    movies: {
+      ...payload,
+      results: getYearOutOfDateString(payload),
+    },
     error: null
   }
 );

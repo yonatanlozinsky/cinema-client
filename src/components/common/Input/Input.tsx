@@ -6,11 +6,20 @@ interface IProps {
     onChange: (e: ChangeEvent) => void;
     value?: string;
     name?: string;
+    error?: boolean;
 };
 
 const Input = (props: IProps) => {
-    const { value, onChange, name, label } = props;
-    return <TextField name={name} color="primary" onChange={onChange} label={label} value={value} />
+    const { value, onChange, name, label, error } = props;
+    return (
+        <TextField
+            name={name}
+            color={error ? 'secondary' : 'primary'}
+            onChange={onChange}
+            label={label}
+            value={value}
+        />
+    );
 };
 
 export default Input;
