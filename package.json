@@ -32,14 +32,14 @@
     "yup": "^0.28.3"
   },
   "scripts": {
-    "start:production": "node server.js",
+    "start": "node server.js",
     "dev": "env-cmd -e development react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint './**/*.{ts,tsx}'",
     "lint:fix": "eslint --fix --ext .ts,.tsx .",
-    "tsc": "tsc"
+    "check-ts": "tsc"
   },
   "husky": {
     "hooks": {

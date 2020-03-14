@@ -19,7 +19,7 @@ const DeleteModal = () => {
     const movies = useSelector(moviesSelector);
 
     const currentMovieData = movies
-    ? movies.results.filter((movie: IMovie) => movie.id === currentMovieId)[0]
+    ? movies.results.filter((movie: any) => movie.id === currentMovieId)[0]
     : undefined;
 
     const [ editedMovieData, setEditedMovieData ] = useState<IMovie>(currentMovieData);
