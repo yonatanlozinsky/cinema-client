@@ -6,6 +6,7 @@ import themes from './theme';
 import GlobalStyles from './theme/globalStyle';
 
 import Movies from './screens/Movies/Movies';
+import ModalContainer from './components/Modals/ModalContainer';
 
 export const App = () => {
   const store = createStore();
@@ -15,6 +16,7 @@ export const App = () => {
       <GlobalStyles />
       <ThemeProvider theme={themes.green}>
         <Movies />
+        <ModalContainer />
       </ThemeProvider>
     </Provider>
   );

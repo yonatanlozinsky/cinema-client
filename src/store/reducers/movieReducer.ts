@@ -3,7 +3,9 @@ import { IMovie } from '../../interfaces/movie';
 
 interface IState {
     error: string,
-    movies?: IMovie
+    movies?: {
+      results: Array<IMovie>
+    }
 };
 
 interface IAction {
@@ -37,10 +39,21 @@ const fetchMoviesFailure = (state: IState, payload: IPayload) => (
   }
 );
 
+const deleteMovie = (state: IState, payload: number) => (
+  {
+    ...state,
+    movies: {
+      ...state.movies,
+      results: 
+        state.movies && state.movies.results.filter(movie => movie.id !== payload)
+  }
+  }
+);
 
 const handlerTypes: {[key: string]: Function} = {
   [actionTypes.FETCH_MOVIES_SUCCESS]: fetchMoviesSuccess,
   [actionTypes.FETCH_MOVIES_FAILURE]: fetchMoviesFailure,
+  [actionTypes.DELETE_MOVIE]: deleteMovie
 };
 
 const movieReducer = (state = initialState, { type, payload }: IAction) => {

@@ -1,9 +1,6 @@
 import * as actionTypes from '../actionTypes';
-
-type modalType = 'deleteModal' | 'editModal';
-
+import { IOpenModal } from '../../interfaces/modal';
 interface IState {
-    openModal?: modalType;
 };
 
 interface IAction {
@@ -11,17 +8,13 @@ interface IAction {
     payload: {}
 };
 
-interface IPayload {
-    payload: {}
+interface ISetOpenModalPayload extends IOpenModal {};
+
+
+const initialState: IState = {
 };
 
-
-const initialState = {
-  error: '',
-  movies: null,
-};
-
-const setOpenModal = (state: IState, payload: IPayload) => (
+const setOpenModal = (state: IState, payload: ISetOpenModalPayload) => (
   {
     ...state,
     openModal: payload,

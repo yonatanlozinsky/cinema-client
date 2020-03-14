@@ -7,21 +7,25 @@ interface IProps {
     width?: string;
     fontSize?: string;
     color?: string;
+    onClick?: () => void;
+    border?: string;
+    borderRadius?: string;
 };
 
 const ButtonWrapper = styled.button<IProps>(props =>`
     cursor: pointer;
-    font-size: ${props.fontSize || '14em'};
     height: ${props.height || '20px'};
     width: ${props.width || '50px'};
-    font-size: ${props.fontSize || '14em'};
+    font-size: ${props.fontSize || '0.75em'};
     background-color: ${props.theme.primaryColor || props.color};
+    border: ${props.border || 'none'};
+    border-radius: ${props.borderRadius || '5px'};
 `);
 
 const Button: React.FC<IProps> = (props) => {
-    const { text, children } = props;
+    const { text, children, onClick } = props;
     return (
-        <ButtonWrapper>
+        <ButtonWrapper onClick={onClick}>
             { text || children }
         </ButtonWrapper>
     );
