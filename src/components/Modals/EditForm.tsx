@@ -10,7 +10,7 @@ import EditSchema from '../../formValidations/edit';
 
 interface IProps {
     initialValues: IMovie;
-    onSubmit: (values: Partial<IMovie>) => void;
+    onSubmit: (values: IMovie) => void;
 };
 
 const EditForm = (props: IProps) => {
