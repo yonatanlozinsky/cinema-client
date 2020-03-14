@@ -37,7 +37,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint './**/*.{ts,tsx}'",
+    "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint --fix --ext .ts,.tsx .",
     "check-ts": "tsc"
   },
