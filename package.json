@@ -30,12 +30,13 @@
     "yup": "^0.28.3"
   },
   "scripts": {
-    "start": "node server.js",
+    "start:production": "node server.js",
     "dev": "env-cmd -e development react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint './**/*.{ts,tsx}'"
+    "lint": "eslint './**/*.{ts,tsx}'",
+    "lint:fix": "eslint --fix --ext .ts,.tsx ."
   },
   "husky": {
     "hooks": {
@@ -46,9 +47,6 @@
     "*.ts": [
       "yarn run lint"
     ]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -65,6 +63,7 @@
   "devDependencies": {
     "@types/react-redux": "^7.1.7",
     "@types/styled-components": "^5.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8"
   }

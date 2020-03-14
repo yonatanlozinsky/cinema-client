@@ -9,8 +9,8 @@ import { IMovie } from '../../interfaces/movie';
 import EditSchema from '../../formValidations/edit';
 
 interface IProps {
-    initialValues: IMovie,
-    onSubmit: (values: any) => void;
+    initialValues: IMovie;
+    onSubmit: (values: Partial<IMovie>) => void;
 };
 
 const EditForm = (props: IProps) => {

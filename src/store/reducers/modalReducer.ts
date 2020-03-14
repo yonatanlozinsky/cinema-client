@@ -4,11 +4,11 @@ interface IState {
 };
 
 interface IAction {
-    type: string,
-    payload: {}
+    type: string;
+    payload: {};
 };
 
-interface ISetOpenModalPayload extends IOpenModal {};
+type ISetOpenModalPayload = IOpenModal;
 
 
 const initialState: IState = {

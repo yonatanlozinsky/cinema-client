@@ -9,7 +9,7 @@ import { fetchMovies } from '../../store/actionCreators';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { IMovie } from '../../interfaces/movie';
 
-export default () => {
+const Movies = () => {
   const theme = useTheme();
   const dispatch = useDispatch();
   const movies = useSelector(moviesSelector);
@@ -38,6 +38,8 @@ export default () => {
       </Styles.Container>
     );
   };
+
+export default Movies;
 
 const Styles: {[key: string]: React.FC} = {};
 

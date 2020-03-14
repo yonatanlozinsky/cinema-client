@@ -1,6 +1,6 @@
 import instance from '../network';
 
-export const fetchPopularMovies = (params?: Object) => {
+export const fetchPopularMovies = (params?: {}) => {
     return instance.get('/discover/movie', {
         params: {
             page: 1,

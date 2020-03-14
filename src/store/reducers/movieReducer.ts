@@ -2,19 +2,19 @@ import * as actionTypes from '../actionTypes';
 import { IMovie } from '../../interfaces/movie'; 
 
 interface IState {
-    error: string,
+    error: string;
     movies?: {
-      results: Array<IMovie>
-    }
+      results: Array<IMovie>;
+    };
 };
 
 interface IAction {
-    type: string,
-    payload: {}
+    type: string;
+    payload: {};
 };
 
 interface IPayload {
-    payload: {}
+    payload: {};
 };
 
 interface IFetchMoviesSuccessPayload {
