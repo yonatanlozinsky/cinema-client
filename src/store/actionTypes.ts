@@ -5,3 +5,4 @@ export const FETCH_MOVIES_FAILURE = 'FETCH_MOVIES_FAILURE';
 export const SET_OPEN_MODAL = 'SET_OPEN_MODAL';
 
 export const DELETE_MOVIE = 'DELETE_MOVIE';
+export const EDIT_MOVIE = 'EDIT_MOVIE';

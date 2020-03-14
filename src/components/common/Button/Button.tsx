@@ -10,6 +10,7 @@ interface IProps {
     onClick?: () => void;
     border?: string;
     borderRadius?: string;
+    hoverColor?: string;
 };
 
 const ButtonWrapper = styled.button<IProps>(props =>`
@@ -17,9 +18,13 @@ const ButtonWrapper = styled.button<IProps>(props =>`
     height: ${props.height || '20px'};
     width: ${props.width || '50px'};
     font-size: ${props.fontSize || '0.75em'};
-    background-color: ${props.theme.primaryColor || props.color};
+    background-color: ${props.color || props.theme.primaryColor};
     border: ${props.border || 'none'};
     border-radius: ${props.borderRadius || '5px'};
+
+    &:hover {
+        background-color: ${props.hoverColor || props.theme.secondaryColor};
+    }
 `);
 
 const Button: React.FC<IProps> = (props) => {

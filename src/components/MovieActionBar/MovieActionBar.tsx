@@ -10,7 +10,7 @@ interface IProps {
 
 const MovieActionBar = ({ currentMovieId }: IProps) => {
     const dispatch = useDispatch();
-    
+
     const onClickDelete = useCallback(()=>(
         dispatch(setOpenModal({openModal: 'deleteModal', currentMovieId}))
     ), [dispatch, currentMovieId]);
@@ -24,7 +24,7 @@ const MovieActionBar = ({ currentMovieId }: IProps) => {
         <Styles.Container>
             {/* TODO: i18n */}
             <Button onClick={onClickDelete}>Delete</Button>
-            <Button>Edit</Button>
+            <Button onClick={onClickEdit}>Edit</Button>
         </Styles.Container>
 
     );

@@ -1,5 +1,7 @@
 import * as actionTypes from './actionTypes';
 import { IOpenModal } from '../interfaces/modal';
+import { IMovie } from '../interfaces/movie';
+
 
 export const fetchMovies = () => {
     return {
@@ -21,3 +23,10 @@ export const deleteMovie = (movieId: number) => {
         payload: movieId
     };
 };
+
+export const editMovie = (movie: IMovie) => {
+    return {
+        type: actionTypes.EDIT_MOVIE,
+        payload: movie
+    };
+}
