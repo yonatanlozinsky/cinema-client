@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTheme } from 'styled-components';
 import { BeatLoader } from 'react-spinners';
 import { moviesSelector } from '../../store/selectors/movies';
 import { fetchMovies } from '../../store/actionCreators';
 import MovieCard from '../../components/MovieCard/MovieCard';
+import * as Styles from './styles';
 import { IMovie } from '../../interfaces/movie';
 
 export default () => {
+  const theme = useTheme();
   const dispatch = useDispatch();
   const movies = useSelector(moviesSelector);
 
@@ -15,13 +18,19 @@ export default () => {
   }, []);
 
     return (
-      <div>
+      <Styles.Container>
         {movies
           ? movies.results.map((movie: IMovie, index: number) => (
-            <MovieCard key={`${movie.imdb_id}_${index}`} backgroundPosterURL={movie.poster_path} />
+            movie && <MovieCard
+                key={`${movie.imdb_id}_${index}`}
+                backgroundPosterURL={movie.poster_path}
+                title={movie.title}
+                year={movie.release_date}
+                voteAverage={movie.vote_average}
+              />
             ))
-          : <BeatLoader color={"#05c46b"} />
+          : <BeatLoader color={theme.primaryColor} />
         }
-      </div>
+      </Styles.Container>
     );
   };
