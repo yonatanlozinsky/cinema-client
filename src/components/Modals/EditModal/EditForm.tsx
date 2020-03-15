@@ -35,7 +35,7 @@ const EditForm = (props: IProps) => {
                     <Styles.FieldContainer>
                         <Styles.ErrorField>{formikProps.errors?.title}</Styles.ErrorField>
                         <Styles.ErrorField>{formikProps.errors?.release_date}</Styles.ErrorField>
-                        <Styles.ErrorField>{formikProps.errors?.rating}</Styles.ErrorField>
+                        <Styles.ErrorField>{formikProps.errors?.vote_average}</Styles.ErrorField>
 
                         <Input
                             data-testid="edit-form-title"
@@ -97,6 +97,5 @@ Styles.ButtonContainer = styled.div`
 Styles.ErrorField = styled.div(props =>`
     color: ${props.theme.red};
     font-size: 0.75em;
-    margin-top: 2%;
     font-weight: bold;
 `);
