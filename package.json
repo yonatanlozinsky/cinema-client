@@ -44,7 +44,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "tsc && lint-staged",
-      "pre-push": "test"
+      "pre-push": "yarn test --watchAll=false"
     }
   },
   "lint-staged": {
