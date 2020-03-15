@@ -21,6 +21,7 @@ Production:
 * Use of TypeScript
 * Use of React hooks
 * CI/CD - Automatic deploys to heroku with TravisCI
+* Use of env variables for easy configuration
 * Pre-commit & pre-push hooks (lint, ts check, unit-tests)
 * Write unit tests in bug-prone areas (will increase coverage & add coverage enforcement)
 * State management (redux, redux-saga, selectors)
