@@ -17,6 +17,9 @@
     "tooLate": "Year is too late!",
     "dateRequired": "Date is required!",
     "voteAverageRequired": "Rating is required!",
+    "ratingType": "Rating must be a number",
+    "voteAverageTooLow": "Rating must be above 0",
+    "voteAverageTooHigh": "Rating must be below 10",
     "noMovies": "There are no movies. Please reload the page!",
     "generalError": "Something went wrong. Please reload the page and talk to Yonatan."
   },

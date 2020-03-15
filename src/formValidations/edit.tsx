@@ -12,6 +12,10 @@ export default Yup.object().shape({
     .min(1900, i18n.t('errors.tooEarly'))
     .max(2025, i18n.t('errors.tooLate'))
     .required(i18n.t('errors.dateRequired')),
-  vote_average: Yup.string()
-    .required(i18n.t('errors.voteAverageRequired')),
+  vote_average: Yup.number()
+    .typeError(i18n.t('errors.ratingType'))
+    .required(i18n.t('errors.voteAverageRequired'))
+    .min(0, i18n.t('errors.voteAverageTooLow'))
+    .max(10, i18n.t('errors.voteAverageTooHigh'))
+    ,
 });
