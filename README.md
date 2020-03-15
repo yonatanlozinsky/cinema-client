@@ -21,7 +21,7 @@ Production:
 * Reusable shared components (Input, Button, Modal)
 * Use of TypeScript
 * Use of React hooks
-* CI/CD - Automatic deploys to heroku with TravisCI
+* Continuous Deploymend - Automatic deploys to heroku
 * Use of env variables for easy configuration
 * Pre-commit & pre-push hooks (lint, ts check, unit-tests)
 * Write unit tests in bug-prone areas (will increase coverage & add coverage enforcement)
@@ -29,3 +29,8 @@ Production:
 * Use of material-ui
 * Use of i18n - string files, easier for switching languages later on
 * Use of color themes
+
+
+## Things to add:
+* Activate CI (currently inactive due to costs, have travis file)
+* Increase test coverage
