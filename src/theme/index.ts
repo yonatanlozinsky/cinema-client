@@ -1,7 +1,8 @@
 import green from './green';
 import orange from './orange';
+import { DefaultTheme } from 'styled-components';
 
-const themes =  {
+const themes: {[key: string]: DefaultTheme} =  {
     orange,
     green
 };

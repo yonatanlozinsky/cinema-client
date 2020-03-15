@@ -27,7 +27,7 @@ interface IFetchMoviesSuccessPayload {
 
 const initialState = {
   error: '',
-  movies: null,
+  movies: undefined,
 };
 
 const getYearOutOfDateString = (payload: IFetchMoviesSuccessPayload) => {
@@ -92,7 +92,7 @@ const handlerTypes: {[key: string]: Function} = {
 
 };
 
-const movieReducer = (state = initialState, { type, payload }: IAction) => {
+const movieReducer = (state: IState = initialState, { type, payload }: IAction) => {
   const handler = handlerTypes[type];
   if (handler) {
     return handler(state, payload);

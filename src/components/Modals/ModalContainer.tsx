@@ -1,6 +1,6 @@
 import React from 'react';
-import DeleteModal from './DeleteModal';
-import EditModal from './EditModal';
+import DeleteModal from './DeleteModal/DeleteModal';
+import EditModal from './EditModal/EditModal';
 
 const ModalContainer = () => {
     return (

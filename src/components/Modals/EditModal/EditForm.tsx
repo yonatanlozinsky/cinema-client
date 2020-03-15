@@ -3,11 +3,11 @@ import { Formik, FormikProps, FormikValues } from 'formik';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { setOpenModal } from '../../store/actionCreators';
-import Input from '../common/Input/Input';
-import Button from '../common/Button/Button';
-import { IMovie } from '../../interfaces/movie';
-import EditSchema from '../../formValidations/edit';
+import { setOpenModal } from '../../../store/actionCreators';
+import Input from '../../common/Input/Input';
+import Button from '../../common/Button/Button';
+import { IMovie } from '../../../interfaces/movie';
+import EditSchema from '../../../formValidations/edit';
 
 interface IProps {
     initialValues: IMovie;
@@ -38,6 +38,7 @@ const EditForm = (props: IProps) => {
                         <Styles.ErrorField>{formikProps.errors?.rating}</Styles.ErrorField>
 
                         <Input
+                            data-testid="edit-form-title"
                             onChange={formikProps.handleChange}
                             name="title"
                             value={formikProps.values.title}

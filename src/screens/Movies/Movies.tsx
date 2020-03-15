@@ -22,7 +22,7 @@ const Movies = () => {
   }, [dispatch]);
 
     return (
-      <Styles.Container>
+      <Styles.Container data-testid="movies-container">
         {movies
           ? movies.results.map((movie: IMovie) => (
             movie && <MovieCard

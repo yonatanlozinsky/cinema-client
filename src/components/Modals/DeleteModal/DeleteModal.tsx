@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import Modal from '../common/Modal/Modal';
-import Button from '../common/Button/Button';
-import { setOpenModal, deleteMovie } from '../../store/actionCreators';
-import { currentMovieIdSelector, openModalSelector } from '../../store/selectors/modals';
+import Modal from '../../common/Modal/Modal';
+import Button from '../../common/Button/Button';
+import { setOpenModal, deleteMovie } from '../../../store/actionCreators';
+import { currentMovieIdSelector, openModalSelector } from '../../../store/selectors/modals';
 import { useTranslation } from 'react-i18next';
 
 const DeleteModal = () => {
@@ -29,9 +29,9 @@ const DeleteModal = () => {
             onClose={closeModalHandler}
             title={t('deleteModal.title')}
         >
-            <Styled.Container>
-                <Button text={t('general.yes')} onClick={deleteMovieHandler} />
-                <Button text={t('general.no')} onClick={closeModalHandler} />
+            <Styled.Container data-testid="delete-modal">
+                <Button data-testid="delete-modal-yes" text={t('general.yes')} onClick={deleteMovieHandler} />
+                <Button data-testid="delete-modal-no" text={t('general.no')} onClick={closeModalHandler} />
             </Styled.Container>
         </Modal>
     );

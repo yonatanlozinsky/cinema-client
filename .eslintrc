@@ -6,7 +6,7 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-empty-interface": "off",
     "react": "off",
-    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/camelcase": "off",
     "react/prop-types": "off",
     "@typescript-eslint/no-unused-vars": "error",

@@ -2,11 +2,11 @@ import React, { useCallback, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import Modal from '../common/Modal/Modal';
-import { setOpenModal, editMovie } from '../../store/actionCreators';
-import { currentMovieIdSelector, openModalSelector } from '../../store/selectors/modals';
-import { moviesSelector } from '../../store/selectors/movies';
-import { IMovie } from '../../interfaces/movie';
+import Modal from '../../common/Modal/Modal';
+import { setOpenModal, editMovie } from '../../../store/actionCreators';
+import { currentMovieIdSelector, openModalSelector } from '../../../store/selectors/modals';
+import { moviesSelector } from '../../../store/selectors/movies';
+import { IMovie } from '../../../interfaces/movie';
 import EditForm from './EditForm';
 
 
