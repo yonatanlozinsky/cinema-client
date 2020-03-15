@@ -7,6 +7,7 @@ Was built in one weekend, I tried my best but feel free to offer advice :)
 
 
 ## App environments
+
 Staging:
 `https://cinema-client-stg.herokuapp.com/
 `
