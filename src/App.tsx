@@ -7,6 +7,7 @@ import GlobalStyles from './theme/globalStyle';
 import Movies from './screens/Movies/Movies';
 import ModalContainer from './components/Modals/ModalContainer';
 import MaterialUiThemeProvider from './theme/materialUIThemeProvider';
+import Header from './components/Header/Header';
 
 export const App = () => {
   const store = createStore();
@@ -18,6 +19,7 @@ export const App = () => {
       <GlobalStyles />
       <ThemeProvider theme={themes[currentTheme]}>
         <MaterialUiThemeProvider> 
+          <Header />
           <Movies />
           <ModalContainer />
         </MaterialUiThemeProvider>

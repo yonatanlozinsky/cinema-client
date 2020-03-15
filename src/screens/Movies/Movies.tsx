@@ -60,6 +60,7 @@ Styles.Container = styled.div`
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
+    padding-top: 10%;
 `;
 
 Styles.NoMovies = styled.div(props =>`

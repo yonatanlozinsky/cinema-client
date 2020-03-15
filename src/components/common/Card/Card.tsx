@@ -9,9 +9,14 @@ interface IProps {
 };
 
 const Card = styled.div<IProps>`
-    height: ${props => props.height || '278px'};
-    width: ${props => props.width || '185px'};
+    height: ${props => props.height};
+    width: ${props => props.width};
     background-color: ${props => props.backgroundColor};
 `;
+
+Card.defaultProps = {
+    height: '278px',
+    width: '185px'
+}
 
 export default Card;

@@ -29,19 +29,19 @@ const DeleteModal = () => {
             onClose={closeModalHandler}
             title={t('deleteModal.title')}
         >
-            <Styled.Container data-testid="delete-modal">
+            <Styles.Container data-testid="delete-modal">
                 <Button data-testid="delete-modal-yes" text={t('general.yes')} onClick={deleteMovieHandler} />
                 <Button data-testid="delete-modal-no" text={t('general.no')} onClick={closeModalHandler} />
-            </Styled.Container>
+            </Styles.Container>
         </Modal>
     );
 };
 
 export default DeleteModal;
 
-const Styled: { [key: string]: React.FC } = {};
+const Styles: { [key: string]: React.FC } = {};
 
-Styled.Container = styled.div`
+Styles.Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
