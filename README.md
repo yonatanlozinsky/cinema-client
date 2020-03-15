@@ -21,7 +21,7 @@ Production:
 * Reusable shared components (Input, Button, Modal)
 * Use of TypeScript
 * Use of React hooks
-* Continuous Deploymend - Automatic deploys to heroku
+* Continuous Deployment - Automatic deploys to heroku
 * Use of env variables for easy configuration
 * Pre-commit & pre-push hooks (lint, ts check, unit-tests)
 * Write unit tests in bug-prone areas (will increase coverage & add coverage enforcement)
