@@ -6,5 +6,7 @@ declare module 'styled-components' {
         secondaryColor: string;
         gray: string;
         red: string;
+        boxShadow: string;
+        cardOverlay: string;
     };
 };

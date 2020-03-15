@@ -41,11 +41,14 @@ const MovieCard = (props: IProps) => {
 
 const Styles: {[key: string]: React.FC<Partial<IProps>>} = {};
 
+interface IMovieCardContainerProps {
+    backgroundPosterURL?: string;
+};
+
 Styles.MovieCardContainer = styled(Card)`
-    background: url(${(props: Partial<IProps>) => `${REACT_APP_POSTER_URL}/${props.backgroundPosterURL}`});
+    background: url(${(props: IMovieCardContainerProps) =>`${REACT_APP_POSTER_URL}${props.backgroundPosterURL}`});
     margin: 5%;
-    // TODO: theme
-    box-shadow: 5px 6px 3px 0 rgba(0,0,0,.8), 0 1px 1px 0 rgba(0,0,0,.84), 0 2px 1px -1px rgba(0,0,0,.82);
+    box-shadow: ${props => props.theme.boxShadow};
 `;
 
 Styles.MovieCardInfoWrapper = styled.div`
@@ -53,8 +56,7 @@ Styles.MovieCardInfoWrapper = styled.div`
     width: 100%;
     opacity: 0;
     &:hover {
-        // TODO: Theme
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: ${props => props.theme.cardOverlay};
         opacity: 1;
     }
 `;
