@@ -5,10 +5,13 @@ import Modal from '../common/Modal/Modal';
 import Button from '../common/Button/Button';
 import { setOpenModal, deleteMovie } from '../../store/actionCreators';
 import { currentMovieIdSelector, openModalSelector } from '../../store/selectors/modals';
+import { useTranslation } from 'react-i18next';
 
 const DeleteModal = () => {
 
     const dispatch = useDispatch();
+
+    const { t } = useTranslation();
     
     const isModalOpen = useSelector(openModalSelector) === 'deleteModal';
     const currentMovieId = useSelector(currentMovieIdSelector);
@@ -24,13 +27,11 @@ const DeleteModal = () => {
         <Modal
             isOpen={isModalOpen}
             onClose={closeModalHandler}
-            // TODO: i18n
-            title="Are you sure you want to delete this movie?"
+            title={t('deleteModal.title')}
         >
             <Styled.Container>
-                {/* TODO: i18n */}
-                <Button text="Yes" onClick={deleteMovieHandler} />
-                <Button text="No" onClick={closeModalHandler} />
+                <Button text={t('general.yes')} onClick={deleteMovieHandler} />
+                <Button text={t('general.no')} onClick={closeModalHandler} />
             </Styled.Container>
         </Modal>
     );

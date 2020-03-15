@@ -8,7 +8,9 @@
     "react": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/camelcase": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "quotes": [2, "single", { "allowTemplateLiterals": true }],
   },
   "extends":  [
     "plugin:react/recommended",

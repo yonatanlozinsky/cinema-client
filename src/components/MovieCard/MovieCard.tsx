@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import Card from '../common/Card/Card';
 import { truncate } from '../../utils/strings';
 import { REACT_APP_POSTER_URL } from '../../config';
@@ -15,19 +16,20 @@ interface IProps {
 
 const MovieCard = (props: IProps) => {
     const { backgroundPosterURL, title, year, voteAverage, currentMovieId } = props;
+    
+    const { t } = useTranslation();
+
     return (
         <Styles.MovieCardContainer backgroundPosterURL={backgroundPosterURL}>
             <Styles.MovieCardInfoWrapper>
                 <Styles.MovieCardInfo>
                     <Styles.Title>{truncate(title, 30)}</Styles.Title>
                     <Styles.Row>
-                        {/* TODO: i18n */}
-                        <Styles.Field>Release Date: </Styles.Field>
+                        <Styles.Field>{t('editForm.releaseDate')}</Styles.Field>
                         <Styles.Value>{year}</Styles.Value>
                     </Styles.Row>
                     <Styles.Row>
-                        {/* TODO: i18n */}
-                        <Styles.Field>Average score: </Styles.Field>
+                        <Styles.Field>{t('editForm.rating')}</Styles.Field>
                         <Styles.Value>{voteAverage}</Styles.Value>
                     </Styles.Row>
                     <MovieActionBar currentMovieId={currentMovieId} />

@@ -12,16 +12,18 @@ interface IProps {
     borderRadius?: string;
     hoverColor?: string;
     disabled?: boolean;
+    flexibleWidth?: boolean;
+    flexibleHeight?: boolean;
 };
 
 const ButtonWrapper = styled.button<IProps>(props =>`
     cursor: pointer;
-    height: ${props.height || '20px'};
-    width: ${props.width || '50px'};
-    font-size: ${props.fontSize || '0.75em'};
+    ${!props.flexibleHeight && `height: ${props.height};`}
+    ${!props.flexibleWidth && `width: ${props.width};`}
+    font-size: ${props.fontSize};
     background-color: ${props.color || props.theme.primaryColor};
-    border: ${props.border || 'none'};
-    border-radius: ${props.borderRadius || '5px'};
+    border: ${props.border};
+    border-radius: ${props.borderRadius};
     
     &:hover {
         background-color: ${props.hoverColor || props.theme.secondaryColor};
@@ -34,12 +36,21 @@ const ButtonWrapper = styled.button<IProps>(props =>`
 `);
 
 const Button: React.FC<IProps> = (props) => {
-    const { text, children, onClick, disabled } = props;
+    const { text, children } = props;
     return (
-        <ButtonWrapper disabled={disabled} onClick={onClick}>
+        <ButtonWrapper {...props}>
             { text || children }
         </ButtonWrapper>
     );
+};
+
+
+Button.defaultProps = {
+    height: '20px',
+    width: '50px',
+    fontSize: '0.75em',
+    border: 'none',
+    borderRadius: '5px'
 };
 
 export default Button;

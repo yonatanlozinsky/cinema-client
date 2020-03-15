@@ -1,18 +1,21 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from 'styled-components';
 import { BeatLoader } from 'react-spinners';
 import popcornBg from '../../assets/popcornBg.jpg';
-import { moviesSelector } from '../../store/selectors/movies';
+import { moviesSelector, moviesErrorSelector } from '../../store/selectors/movies';
 import { fetchMovies } from '../../store/actionCreators';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { IMovie } from '../../interfaces/movie';
 
 const Movies = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const movies = useSelector(moviesSelector);
+  const error = useSelector(moviesErrorSelector);
 
   useEffect(()=> {
     dispatch(fetchMovies());
@@ -31,10 +34,14 @@ const Movies = () => {
                 currentMovieId={movie.id}
               />
             ))
-          : <BeatLoader color={theme.primaryColor} />
+          : !error && <BeatLoader color={theme.primaryColor} />
         }
-        {/* TODO: i18n */}
-        { movies && movies.results && !movies.results.length && <div>No movies for now</div>}
+      { movies && movies.results && !movies.results.length && <Styles.NoMovies>{t('errors.noMovies')}</Styles.NoMovies>}
+      { error && (
+        <Styles.NoMovies>
+          {t('errors.generalError')}
+        </Styles.NoMovies>
+      ) }
       </Styles.Container>
     );
   };
@@ -54,3 +61,9 @@ Styles.Container = styled.div`
     background-attachment: fixed;
     min-height: 100vh;
 `;
+
+Styles.NoMovies = styled.div(props =>`
+  color: ${props.theme.secondaryColor};
+  width: 75%;
+  font-size: 2em;
+`);

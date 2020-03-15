@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { Formik, FormikProps, FormikValues } from 'formik';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { setOpenModal } from '../../store/actionCreators';
 import Input from '../common/Input/Input';
@@ -16,6 +17,8 @@ interface IProps {
 const EditForm = (props: IProps) => {
     const { initialValues, onSubmit } = props;
 
+    const { t } = useTranslation();
+
     const dispatch = useDispatch();
 
     const closeModalHandler = useCallback(()=>dispatch(setOpenModal()), [dispatch]);
@@ -27,7 +30,6 @@ const EditForm = (props: IProps) => {
             validationSchema={EditSchema} 
         >
         {(formikProps: FormikProps<FormikValues>) => {
-            // TODO: i18n
             return (
                 <form>
                     <Styles.FieldContainer>
@@ -39,14 +41,14 @@ const EditForm = (props: IProps) => {
                             onChange={formikProps.handleChange}
                             name="title"
                             value={formikProps.values.title}
-                            label="Title"
+                            label={t('editForm.title')}
                             error={Boolean(formikProps.errors?.title)}
                         />
                         <Input
                             onChange={formikProps.handleChange}
                             name="release_date"
                             value={formikProps.values.release_date}
-                            label="Release date"
+                            label={t('editForm.releaseDate')}
                             error={Boolean(formikProps.errors?.release_date)}
                         />
 
@@ -54,12 +56,12 @@ const EditForm = (props: IProps) => {
                             onChange={formikProps.handleChange}
                             name="vote_average"
                             value={formikProps.values.vote_average}
-                            label="Rating"
+                            label={t('editForm.rating')}
                             error={Boolean(formikProps.errors?.vote_average)}
                         />
                         <Styles.ButtonContainer>
-                            <Button disabled={!formikProps.isValid} text="Yes" onClick={formikProps.handleSubmit} />
-                            <Button text="No" onClick={closeModalHandler} />
+                            <Button disabled={!formikProps.isValid} text={t('general.yes')} onClick={formikProps.handleSubmit} />
+                            <Button text={t('general.no')} onClick={closeModalHandler} />
                         </Styles.ButtonContainer>
 
                     </Styles.FieldContainer>

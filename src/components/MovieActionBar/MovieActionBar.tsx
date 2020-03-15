@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { setOpenModal } from '../../store/actionCreators';
 import Button from '../common/Button/Button';
@@ -10,6 +11,8 @@ interface IProps {
 
 const MovieActionBar = ({ currentMovieId }: IProps) => {
     const dispatch = useDispatch();
+
+    const { t } = useTranslation();
 
     const onClickDelete = useCallback(()=>(
         dispatch(setOpenModal({openModal: 'deleteModal', currentMovieId}))
@@ -22,11 +25,9 @@ const MovieActionBar = ({ currentMovieId }: IProps) => {
 
     return (
         <Styles.Container>
-            {/* TODO: i18n */}
-            <Button onClick={onClickDelete}>Delete</Button>
-            <Button onClick={onClickEdit}>Edit</Button>
+            <Button onClick={onClickDelete}>{t('actions.delete')}</Button>
+            <Button onClick={onClickEdit}>{t('actions.edit')}</Button>
         </Styles.Container>
-
     );
 
 };

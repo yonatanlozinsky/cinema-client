@@ -1,6 +1,7 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import Modal from '../common/Modal/Modal';
 import { setOpenModal, editMovie } from '../../store/actionCreators';
 import { currentMovieIdSelector, openModalSelector } from '../../store/selectors/modals';
@@ -13,7 +14,8 @@ const DeleteModal = () => {
 
     const dispatch = useDispatch();
 
-    
+    const { t } = useTranslation();
+
     const isModalOpen = useSelector(openModalSelector) === 'editModal';
     const currentMovieId = useSelector(currentMovieIdSelector);
     const movies = useSelector(moviesSelector);
@@ -37,12 +39,10 @@ const DeleteModal = () => {
         <Modal
             isOpen={isModalOpen}
             onClose={closeModalHandler}
-            // TODO: i18n
-            title="Edit movie details"
+            title={t('editModal.title')}
         >
             <Styles.Container>
                 <EditForm initialValues={editedMovieData} onSubmit={(values)=>editMovieHandler(values)} />
-                {/* TODO: i18n */}
             </Styles.Container>
         </Modal>
     );

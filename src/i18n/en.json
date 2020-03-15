@@ -1,0 +1,33 @@
+{
+  "general": {
+    "yes": "Yes",
+    "no": "No"
+  },
+  "actions": {
+    "delete": "Delete",
+    "edit": "Edit"
+  },
+  "errors": {
+    "tooShort": "Too short!",
+    "tooLong": "Too long!",
+    "titleRequired": "Movie title is required!",
+    "yearType": "Release year must be a number",
+    "tooEarly": "Year must be later than 1900!",
+    "tooLate": "Year is too late!",
+    "dateRequired": "Date is required!",
+    "voteAverageRequired": "Rating is required!",
+    "noMovies": "There are no movies. Please reload the page!",
+    "generalError": "Something went wrong. Please reload the page and talk to Yonatan."
+  },
+  "deleteModal": {
+    "title": "Are you sure you want to delete this movie?"
+  },
+  "editModal": {
+    "title": "Edit movie"
+  },
+  "editForm": {
+    "title": "Movie title:",
+    "releaseDate": "Release year:",
+    "rating": "Rating:"
+  }
+}

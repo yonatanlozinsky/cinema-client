@@ -1,7 +1,11 @@
 import green from './green';
 import orange from './orange';
 
-export default {
+const themes =  {
     orange,
     green
 };
+
+export default themes;
+
+export type themeTypes = keyof typeof themes;
