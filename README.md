@@ -32,5 +32,10 @@ Production:
 
 
 ## Things to add:
-* Activate CI (currently inactive due to costs, have travis file)
+
+Don't exist due to costs of premium in heroku:
+
+* CI (but travis file exists)
+* SSL cert
+
 * Increase test coverage
