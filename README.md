@@ -38,4 +38,6 @@ Don't exist due to costs of premium in heroku:
 * CI (but travis file exists)
 * SSL cert
 
+Also:
+
 * Increase test coverage
