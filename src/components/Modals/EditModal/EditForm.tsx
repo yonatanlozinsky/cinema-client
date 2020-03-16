@@ -67,7 +67,7 @@ const EditForm = (props: IProps) => {
 
                     </Styles.FieldContainer>
                 </form>
-        )}}
+        );}}
     </Formik>
     );
 };

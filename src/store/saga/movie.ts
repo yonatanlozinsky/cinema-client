@@ -9,13 +9,13 @@ export function* fetchPopularMovies() {
         yield put({
             type: actionTypes.FETCH_MOVIES_SUCCESS,
             payload: data
-        })
+        });
     } catch (error) {
 
         yield put({
             type: actionTypes.FETCH_MOVIES_FAILURE,
             payload: JSON.stringify(error.response.status)
-        })
+        });
     }
 };
 

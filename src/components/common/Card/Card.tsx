@@ -17,6 +17,6 @@ const Card = styled.div<IProps>`
 Card.defaultProps = {
     height: '278px',
     width: '185px'
-}
+};
 
 export default Card;

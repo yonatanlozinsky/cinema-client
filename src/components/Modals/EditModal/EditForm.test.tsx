@@ -3,7 +3,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
-import { fireEvent, cleanup, act } from '@testing-library/react'
+import { fireEvent, cleanup, act } from '@testing-library/react';
 import stateWithMovies from '../../../mocks/stateWithMovies';
 import movieMock from '../../../mocks/movie';
 import { renderApp } from '../../../utils/testUtils';

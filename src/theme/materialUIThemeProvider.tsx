@@ -16,7 +16,7 @@ const MuiProvider: React.FC = (props) => {
           }
           }
         },
-      )
+      );
 
       return (
           <MuiThemeProvider theme={muiTheme}>

@@ -8,7 +8,7 @@ const ModalContainer = () => {
             <DeleteModal />
             <EditModal />
         </>
-    )
+    );
 
 };
 

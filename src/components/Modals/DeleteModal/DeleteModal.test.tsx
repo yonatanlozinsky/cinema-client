@@ -3,7 +3,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
-import { cleanup } from '@testing-library/react'
+import { cleanup } from '@testing-library/react';
 import stateWithMovies from '../../../mocks/stateWithMovies';
 import { renderApp } from '../../../utils/testUtils';
 import DeleteModal from './DeleteModal';
