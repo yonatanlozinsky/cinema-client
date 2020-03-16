@@ -11,6 +11,7 @@
     "react/prop-types": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "quotes": [2, "single", { "allowTemplateLiterals": true }],
+    "semi": "error"
   },
   "extends":  [
     "plugin:react/recommended",

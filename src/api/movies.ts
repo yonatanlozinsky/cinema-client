@@ -11,5 +11,5 @@ export const fetchPopularMovies = (params?: {}) => {
             append_to_response: 'credits',
             ...params
         }
-    })
-}
+    });
+};

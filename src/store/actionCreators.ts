@@ -29,4 +29,4 @@ export const editMovie = (movie: IMovie) => {
         type: actionTypes.EDIT_MOVIE,
         payload: movie
     };
-}
+};

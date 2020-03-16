@@ -21,7 +21,7 @@ const DeleteModal = () => {
     const deleteMovieHandler = useCallback(()=> {
         dispatch(deleteMovie(currentMovieId));
         closeModalHandler();
-    }, [currentMovieId, dispatch, closeModalHandler])
+    }, [currentMovieId, dispatch, closeModalHandler]);
 
     return (
         <Modal
@@ -34,7 +34,7 @@ const DeleteModal = () => {
                 <Button data-testid="delete-modal-no" text={t('general.no')} onClick={closeModalHandler} />
             </Styles.Container>
         </Modal>
-    )
+    );
 };
 
 export default DeleteModal;

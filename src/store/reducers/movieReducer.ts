@@ -36,7 +36,7 @@ const getYearOutOfDateString = (payload: IFetchMoviesSuccessPayload) => {
     ...movie,
     release_date: movie.release_date.substr(0,4)
   };
-})};
+});};
 
 const fetchMoviesSuccess = (state: IState, payload: IFetchMoviesSuccessPayload) => (
   {
@@ -81,7 +81,7 @@ const editMovie = (state: IState, payload: IMovie) => {
           return movie;
         })
     }
-  }
+  };
 };
 
 const handlerTypes: {[key: string]: Function} = {
